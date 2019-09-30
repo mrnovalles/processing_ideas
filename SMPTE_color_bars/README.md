@@ -7,7 +7,7 @@ using Perlin Noise instead of sinusoidal lines to show up something like in this
 
 ## Steps
 1. smpte_static
-![smpte static](generated/static.png "Static SMPTE")
+![smpte static](../img/smpte_color_bars.png "Static SMPTE")
 
 2. Perlin noise horizontal
 3. Perlin noise vertical

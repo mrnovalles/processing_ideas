@@ -5,54 +5,34 @@ void setup() {
 }
 
 void draw() {
-  background(51);
-
-  fill(255);
-  // We are going to draw a polygon out of the wave points
-  beginShape(); 
-  
-  float xoff = 0;       // Option #1: 2D Noise
-  
-  // Iterate over horizontal pixels
-  for (float y = 10; y <= height; y += 10) {
-    // Calculate a x value according to noise, map to 
-    float x = map(noise(xoff, yoff), 0, 1, 100,200); // Option #1: 2D Noise
-    
-    // Set the vertex
-    vertex(x, y); 
-    // Increment y dimension for noise
-    yoff += 0.05;
-  }
-  // increment x dimension for noise
-  xoff += 0.01;
-  vertex(width, height);
-  vertex(width, 10);
-  endShape(CLOSE);
-  poly();
+  background(255);
+  noStroke();
+  poly(400, 500, 0, 50, #FFCC00); //yellow
+  poly(200, 300, 50, 100, #0000FF); //blue
+  poly(100, 200, 100, 200, #F00000); //red
+  poly(100, 200, 200, 300, #00FF00); //green
 }
 
-void poly() {
-  background(51);
-
-  fill(#FFF000);
+void poly(int xstart, int xend,int ystart,int yend, color fillcolor) {
+  fill(fillcolor);
   // We are going to draw a polygon out of the wave points
   beginShape(); 
   
   float xoff = 0;       // Option #1: 2D Noise
   
-  // Iterate over horizontal pixels
-  for (float y = 10; y <= height-10; y += 10) {
-    // Calculate a x value according to noise, map to 
-    float x = map(noise(xoff, yoff), 0, 1, 100,200); // Option #1: 2D Noise
+  // Iterate over vertical pixels
+  for (float y = ystart; y <= yend; y += 10) {
+    // Calculate x value according to noise, map to 
+    float x = map(noise(yoff, xoff), 0, 1, xstart, xend);
     
     // Set the vertex
     vertex(x, y); 
     // Increment y dimension for noise
-    yoff += 0.05;
+    yoff += 0.035;
   }
   // increment x dimension for noise
   xoff += 0.01;
-  vertex(width, height-10);
-  vertex(width, 10);
+  vertex(width, yend);
+  vertex(width, ystart);
   endShape(CLOSE);
 }

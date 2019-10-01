@@ -5,3 +5,4 @@ Some drawings using processing
 ![Triangles Garland](img/triangles_garland.png)
 ### 2. SMPTE Color Bars
 ![SMPTE Color Bars](img/smpte_color_bars.png)
+![SMPTE Color Bars](img/smpte_color_bars_tunning.gif)
